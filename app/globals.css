@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme — default */
+:root {
+  --bg-base: #fbfaf7;
+  --bg-surface: #ffffff;
+  --bg-raised: #f5f2ec;
+  --bg-border: #e8e3d8;
+
+  --ink-primary: #1a1714;
+  --ink-secondary: #5f574d;
+  --ink-tertiary: #968b7c;
+
+  --amber-glow: #b8860b;
+  --amber-deep: #8a6308;
+  --amber-soft: #fdf4dc;
+
+  color-scheme: light;
+}
+
+/* Dark theme — opt-in via .dark on <html> */
+.dark {
+  --bg-base: #0a0908;
+  --bg-surface: #13110f;
+  --bg-raised: #1c1917;
+  --bg-border: #2a2520;
+
+  --ink-primary: #f5f0e8;
+  --ink-secondary: #a39689;
+  --ink-tertiary: #6b5d50;
+
+  --amber-glow: #d4a017;
+  --amber-deep: #a37013;
+  --amber-soft: #3a2a10;
+
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--bg-base);
+  color: var(--ink-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgba(184, 134, 11, 0.2);
+  color: var(--ink-primary);
+}
+
+.dark ::selection {
+  background: rgba(212, 160, 23, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-tertiary); }
+
+/* Subtle paper grain — works in both themes */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark .grain::before { opacity: 0.025; }
+
+/* Recording pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.45); }
+  50% { box-shadow: 0 0 0 24px rgba(184, 134, 11, 0); }
+}
+.dark .recording-pulse {
+  animation: pulse-glow-dark 1.6s ease-in-out infinite;
+}
+.recording-pulse {
+  animation: pulse-glow 1.6s ease-in-out infinite;
+}
+@keyframes pulse-glow-dark {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.5); }
+  50% { box-shadow: 0 0 0 24px rgba(212, 160, 23, 0); }
+}
+
+/* Cursor blink */
+@keyframes blink { 50% { opacity: 0; } }
+.cursor-blink { animation: blink 1s infinite; }
+
+/* Fade in on mount */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.4s ease-out; }

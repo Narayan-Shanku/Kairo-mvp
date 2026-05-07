@@ -14,6 +14,7 @@ This is the Phase 1 hosted demo — a full interactive concept walkthrough with 
 - **Voice journal** — simulated recording with live transcript and auto domain tagging
 - **Ask memory** — RAG-style answers grounded in cited memories
 - **Timeline** — chronological memory browser with domain filters
+- **iOS preview** — interactive iPhone frame with 6 tappable mobile screens, plus wireframe gallery and Q4 2026 roadmap
 - **Pricing** — Free / Pro / Power freemium tiers
 - **Light & dark themes** — toggle in the sidebar, preference saved to localStorage
 

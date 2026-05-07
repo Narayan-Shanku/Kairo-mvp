@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Sparkles, Flame, ArrowRight } from 'lucide-react';
+import { Sparkles, Flame, ArrowRight, Smartphone } from 'lucide-react';
 import DomainTag from './components/DomainTag';
 
 export default function Home() {
@@ -103,6 +103,25 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/* iOS teaser */}
+      <Link
+        href="/mobile"
+        className="block mt-4 bg-bg-surface border border-bg-border rounded-2xl p-6 hover:border-amber-deep/40 transition-colors group"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-11 h-11 rounded-xl bg-amber-soft flex items-center justify-center flex-shrink-0">
+              <Smartphone size={20} className="text-amber-glow" strokeWidth={1.75} />
+            </div>
+            <div>
+              <div className="text-sm font-medium text-ink-primary mb-0.5">iOS app · coming Q4 2026</div>
+              <div className="text-xs text-ink-secondary">Tap through the interactive iPhone preview</div>
+            </div>
+          </div>
+          <ArrowRight size={16} className="text-ink-tertiary group-hover:translate-x-0.5 group-hover:text-amber-glow transition-all" />
+        </div>
+      </Link>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Mic, MessageCircle, Clock, Sparkles } from 'lucide-react';
+import { Home, Mic, MessageCircle, Clock, Sparkles, Smartphone } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const nav = [
@@ -10,6 +10,7 @@ const nav = [
   { href: '/journal', label: 'Voice journal', icon: Mic },
   { href: '/recall', label: 'Ask memory', icon: MessageCircle },
   { href: '/timeline', label: 'Timeline', icon: Clock },
+  { href: '/mobile', label: 'iOS preview', icon: Smartphone },
   { href: '/pricing', label: 'Pricing', icon: Sparkles },
 ];
 

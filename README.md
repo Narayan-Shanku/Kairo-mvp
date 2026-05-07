@@ -12,7 +12,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-d4a017?style=flat-square)](#license)
 [![Fork friendly](https://img.shields.io/badge/Fork-friendly-22c55e?style=flat-square&logo=github)](#fork-and-make-it-yours)
 
-[**Live demo →**](#) · [**What is this?**](#what-is-this) · [**Run it yourself**](#run-it-yourself) · [**Fork & customize**](#fork-and-make-it-yours)
+[**Live demo →**](https://kairo-mvp-five.vercel.app/) · [**What is this?**](#what-is-this) · [**Run it yourself**](#run-it-yourself) · [**Fork & customize**](#fork-and-make-it-yours)
 
 </div>
 
